@@ -18,6 +18,14 @@ class UsersModuleTest extends TestCase
     }
 
     /** @test */
+    function it_loads_the_users_list_page_is_empty()
+    {
+        $this->get('/usuarios?empty')
+          ->assertStatus(200)
+          ->assertSee('No existen Usuarios');
+    }
+
+    /** @test */
     function it_loads_the_users_details_page(){
       $this->get('usuarios/5')
       ->assertStatus(200)
