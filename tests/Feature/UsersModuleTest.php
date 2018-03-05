@@ -22,7 +22,7 @@ class UsersModuleTest extends TestCase
     {
         $this->get('/usuarios?empty')
           ->assertStatus(200)
-          ->assertSee('No existen Usuarios');
+          ->assertSee('No hay resultados registrados.');
     }
 
     /** @test */

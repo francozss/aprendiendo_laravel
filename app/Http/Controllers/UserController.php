@@ -19,10 +19,11 @@ class UserController extends Controller
       //var_dump(compact('title','users')); die();
       //dd(compact('title','users'));
 
-      return view('users',compact('title','users'));
+      return view('users.index',compact('title','users'));
     }
     public function show($id){
-      return "Mostrando detalle del usuario: {$id}";
+      return view('users.show',compact('id'));
+      //return "Mostrando detalle del usuario: {$id}";
     }
     public function create(){
       return 'Crear nuevo usuario';
