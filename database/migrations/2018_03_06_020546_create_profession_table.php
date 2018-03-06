@@ -11,22 +11,21 @@ class CreateProfessionTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('profession', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title',100);
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('profession');
-    }
+     public function up()
+     {
+         Schema::create('profession', function (Blueprint $table) {
+             $table->increments('id');
+             $table->string('title', 100)->unique();
+             $table->timestamps();
+         });
+     }
+     /**
+      * Reverse the migrations.
+      *
+      * @return void
+      */
+     public function down()
+     {
+         Schema::dropIfExists('profession');
+     }
 }
