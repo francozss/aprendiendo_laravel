@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+use App\Profession;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,12 +16,12 @@ class UserSeeder extends Seeder
     {
         // $profession = DB::select('SELECT id FROM profession WHERE title = ?, ['Desarrollador back-end']);
         // $profession = DB::table('profession')->select('id')->first();
-        $profession = DB::table('profession')
-          ->select('id')
+        $profession = Profession::
+          select('id')
           ->where('title','=','Desarrollador back-end')
           ->first();
         //dd($profession);
-        DB::table('users')->insert([
+        User::create([
           'name' => 'Franco Sinche',
           'email' =>'franco@gmail.com',
           'password' => bcrypt('laravel'),
