@@ -24,9 +24,9 @@
       <!-- Fixed navbar -->
       <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Curso Laravel</a>
+      <a href="#!" class="brand-logo right">Curso Laravel</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="left hide-on-med-and-down">
         <li><a href="{{ url('/usuarios') }}" class="active">Usuarios</a></li>
         <li><a href="{{ url('/usuarios/nuevo') }}">Nuevo usuario</a></li>
         <li><a href="collapsible.html">Profesiones</a></li>

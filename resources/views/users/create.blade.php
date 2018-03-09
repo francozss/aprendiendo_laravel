@@ -2,15 +2,30 @@
 @section('title', "Crear usuario")
 @section('content')
   <h1>Crear usuario</h1>
+
+  @if ($errors->any())
+  <div id="card-alert" class="card pink lighten-5">
+    <div class="card-content pink-text darken-1">
+      <h6 class="title">Por favor corrija los siguientes errores:</h6>
+      <!-- @foreach ($errors->all() as $error)
+        <p>{{ $error }}</p>
+      @endforeach -->
+    </div>
+  </div>
+  @endif
+
   <form class="" action="{{ url('usuarios') }}" method="POST">
     {!! csrf_field() !!}
     <div class="row">
       <div class="input-field col s12">
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="{{ old('name') }}">
+        @if ($errors->has('name'))
+          <p>{{ $errors->first('name') }}</p>
+        @endif
         <label for="name">Nombre</label>
       </div>
       <div class="input-field col s12">
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" value="{{ old('email') }}">
         <label for="email">Email</label>
       </div>
       <div class="input-field col s12">
