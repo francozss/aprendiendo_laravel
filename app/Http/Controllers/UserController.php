@@ -20,9 +20,9 @@ class UserController extends Controller
       //   ->with('title', 'Listado de Usuarios');
       return view('users.index',compact('title','users'));
     }
-    public function show($id){
-      $user = User::findOrFail($id);
-
+    public function show(User $user){
+      //$user = User::findOrFail($id);
+      //dd($user);
       return view('users.show',compact('user'));
       //return "Mostrando detalle del usuario: {$id}";
     }

@@ -6,7 +6,7 @@
         @forelse ($users as $user)
           <li>
             {{ $user->name }}, {{ $user->email }}
-            <a href="{{ route('users.show',['id' => $user->id]) }}">Ver enlace</a>
+            <a href="{{ route('users.show',['user' => $user->id]) }}">Ver enlace</a>
           </li>
         @empty
           <li>No hay resultados registrados.</li>
