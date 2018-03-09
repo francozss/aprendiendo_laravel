@@ -52,11 +52,9 @@
         <div class="col-8">
           @yield('content')
         </div>
-        <!--<div class="col-4">
-          @section('sidebar')
-            <h2>Barra lateral</h2>
-          @show
-        </div>-->
+        <div class="col-4">
+            <p>&nbsp;</p>
+        </div>
       </div>
     </main>
 
